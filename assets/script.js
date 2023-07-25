@@ -17,23 +17,35 @@ const slides = [
 	}
 ]
 
+// On est sur la première slide
 let slideIndex = 1;
+
+//Fonction pour afficher une slide
 showSlides(slideIndex);
 
+//Afficher la slide suivante
 function plusSlides(n) {
-    showSlides(slideIndex += n);
+	slideIndex += n
+    showSlides(slideIndex);
 }
 
+//Afficher la slide n
+
 function currentSlide(n) {
-    showSlides(slideIndex = n);
+	slideIndex = n
+    showSlides(slideIndex);
 }
 
 function showSlides(n) {
+	//Récupérer toutes les slides
 	let slides = document.getElementsByClassName('banner-img');
+	//Récupérer tous les points
 	let dots = document.getElementsByClassName('dot');
 	
+	// Réinitialiser notre slide à 1
 	if(n > slides.length) { slideIndex = 1 }
 	
+	// Afficher la dernière slide la slide 4
 	if(n < 1 ) { slideIndex = slides.length }
 	
 	// Cacher toutes les slides
